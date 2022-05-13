@@ -11,7 +11,7 @@ function syncFunction() {
 
     if (window.webkit && window.webkit.messageHandlers) {
         try {
-            webkit.messageHandlers.NativeJavascriptInterface.postMessage(names);
+            webkit.messageHandlers.NamesJSInterface.postMessage(names);
         } catch(err) {
             console.log(err);
         }
@@ -21,9 +21,24 @@ function syncFunction() {
 }
 
 function asyncFunction() {
-    document.getElementById("frm1").submit();
+    var dob = document.getElementById("dob").value;
+    console.log(dob);
+    if (window.webkit && window.webkit.messageHandlers) {
+        try {
+            webkit.messageHandlers.DobJSInterface.postMessage(dob);
+        } catch(err) {
+            console.log(err);
+        }
+    } else {
+        console.log("No interface APIs found.");
+    }
 }
 
 function setFullName(fullName) {
     document.getElementById("fullName").innerText = fullName;
 }
+
+function setAge(age) {
+    document.getElementById("age").innerText = age;
+}
+

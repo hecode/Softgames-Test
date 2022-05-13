@@ -27,7 +27,9 @@ extension ViewController {
     
     func setup() {
         webView.configuration.userContentController.add(self,
-                                                        name: "NativeJavascriptInterface")
+                                                        name: "NamesJSInterface")
+        webView.configuration.userContentController.add(self,
+                                                        name: "DobJSInterface")
         
         do {
             guard let filePath = Bundle.main.path(forResource: "myPage", ofType: "html")
@@ -57,8 +59,17 @@ extension ViewController {
         let fname = dict["fname"] as? String ?? ""
         let lname = dict["lname"] as? String ?? ""
         let fullName = fname + " " + lname
-        print("setFullName(\"\(fullName)\");")
         webView.evaluateJavaScript("setFullName(\"\(fullName)\");", completionHandler: nil)
+    }
+    
+    func calculateAndUpdateAge(_ dob: Date) {
+        if let age = yearsBetweenDates(startDate: dob, endDate: Date()) {
+            if age >= 0 {
+                webView.evaluateJavaScript("setAge(\"\(age)\");", completionHandler: nil)
+            } else {
+                webView.evaluateJavaScript("setAge(\"TimeTraveler?\");", completionHandler: nil)
+            }
+        }
     }
     
 }
@@ -70,8 +81,16 @@ extension ViewController: WKScriptMessageHandler {
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
 //        print("Message received: \(message.name) with body: \(message.body)")
-        if message.name == "NativeJavascriptInterface", let dict = message.body as? NSDictionary {
+        if message.name == "NamesJSInterface", let dict = message.body as? NSDictionary {
             mergeAndUpdateNames(dict)
+        } else if message.name == "DobJSInterface", let dobStr = message.body as? String {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                if let date = dateFormatter.date(from: dobStr) {
+                    self.calculateAndUpdateAge(date)
+                }
+            }
         }
     }
     

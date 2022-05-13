@@ -18,6 +18,7 @@
 		7E0A4D6D282E6D5100201DE3 /* Softgames_TestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A4D6C282E6D5100201DE3 /* Softgames_TestUITestsLaunchTests.swift */; };
 		7E0A4D7B282E6FDF00201DE3 /* myPage.html in Resources */ = {isa = PBXBuildFile; fileRef = 7E0A4D79282E6FDF00201DE3 /* myPage.html */; };
 		7E0A4D7C282E6FDF00201DE3 /* myScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 7E0A4D7A282E6FDF00201DE3 /* myScript.js */; };
+		7EDD64E1282E84D000CD0B65 /* DateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD64E0282E84D000CD0B65 /* DateHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		7E0A4D6C282E6D5100201DE3 /* Softgames_TestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Softgames_TestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7E0A4D79282E6FDF00201DE3 /* myPage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = myPage.html; sourceTree = "<group>"; };
 		7E0A4D7A282E6FDF00201DE3 /* myScript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = myScript.js; sourceTree = "<group>"; };
+		7EDD64E0282E84D000CD0B65 /* DateHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +109,8 @@
 				7E0A4D4B282E6D4E00201DE3 /* SceneDelegate.swift */,
 				7E0A4D4D282E6D4E00201DE3 /* ViewController.swift */,
 				7E0A4D4F282E6D4E00201DE3 /* Main.storyboard */,
-				7E0A4D7D282E6FE500201DE3 /* Web Page */,
+				7EDD64E2282E84D400CD0B65 /* Helpers */,
+				7EDD64E3282E84DB00CD0B65 /* Resources */,
 				7E0A4D52282E6D5000201DE3 /* Assets.xcassets */,
 				7E0A4D54282E6D5000201DE3 /* LaunchScreen.storyboard */,
 				7E0A4D57282E6D5000201DE3 /* Info.plist */,
@@ -139,6 +142,22 @@
 				7E0A4D79282E6FDF00201DE3 /* myPage.html */,
 			);
 			path = "Web Page";
+			sourceTree = "<group>";
+		};
+		7EDD64E2282E84D400CD0B65 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7EDD64E0282E84D000CD0B65 /* DateHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7EDD64E3282E84DB00CD0B65 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7E0A4D7D282E6FE500201DE3 /* Web Page */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E0A4D4E282E6D4E00201DE3 /* ViewController.swift in Sources */,
+				7EDD64E1282E84D000CD0B65 /* DateHelpers.swift in Sources */,
 				7E0A4D4A282E6D4E00201DE3 /* AppDelegate.swift in Sources */,
 				7E0A4D4C282E6D4E00201DE3 /* SceneDelegate.swift in Sources */,
 			);
