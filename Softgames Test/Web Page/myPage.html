@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>  
+  <script src="myScript.js"></script>
+</head>
+<body>
+
+<p>Enter the names and date in the fields, then click "Submit" to submit the form:</p>
+
+<form id="frm1">
+  First name: <input type="text" id="fname"><br>
+  Last name: <input type="text" id="lname"><br><br>
+  Date of Birth: <input type="date" id="dob"><br><br>
+  <input type="button" onclick="syncFunction()" value="Sync">
+  <input type="button" onclick="asyncFunction()" value="Async">
+</form>
+
+<p>Full name: <span id="fullName"></span></p>
+<p>Age: <span id="age"></span></p>
+
+</body>
+</html>
