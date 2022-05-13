@@ -19,6 +19,7 @@
 		7E0A4D7C282E6FDF00201DE3 /* myScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 7E0A4D7A282E6FDF00201DE3 /* myScript.js */; };
 		7EDD64E1282E84D000CD0B65 /* DateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD64E0282E84D000CD0B65 /* DateHelpers.swift */; };
 		7EDD64E5282E923D00CD0B65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD64E4282E923D00CD0B65 /* Constants.swift */; };
+		7EDD64E7282EB5D200CD0B65 /* TestMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD64E6282EB5D200CD0B65 /* TestMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		7E0A4D7A282E6FDF00201DE3 /* myScript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = myScript.js; sourceTree = "<group>"; };
 		7EDD64E0282E84D000CD0B65 /* DateHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
 		7EDD64E4282E923D00CD0B65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7EDD64E6282EB5D200CD0B65 /* TestMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				7E0A4D60282E6D5000201DE3 /* Softgames_TestTests.swift */,
+				7EDD64E6282EB5D200CD0B65 /* TestMessage.swift */,
 			);
 			path = "Softgames TestTests";
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E0A4D61282E6D5000201DE3 /* Softgames_TestTests.swift in Sources */,
+				7EDD64E7282EB5D200CD0B65 /* TestMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
