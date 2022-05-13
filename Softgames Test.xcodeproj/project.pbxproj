@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7E0A4D4A282E6D4E00201DE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A4D49282E6D4E00201DE3 /* AppDelegate.swift */; };
-		7E0A4D4C282E6D4E00201DE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A4D4B282E6D4E00201DE3 /* SceneDelegate.swift */; };
 		7E0A4D4E282E6D4E00201DE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A4D4D282E6D4E00201DE3 /* ViewController.swift */; };
 		7E0A4D51282E6D4E00201DE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E0A4D4F282E6D4E00201DE3 /* Main.storyboard */; };
 		7E0A4D53282E6D5000201DE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E0A4D52282E6D5000201DE3 /* Assets.xcassets */; };
@@ -19,6 +18,7 @@
 		7E0A4D7B282E6FDF00201DE3 /* myPage.html in Resources */ = {isa = PBXBuildFile; fileRef = 7E0A4D79282E6FDF00201DE3 /* myPage.html */; };
 		7E0A4D7C282E6FDF00201DE3 /* myScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 7E0A4D7A282E6FDF00201DE3 /* myScript.js */; };
 		7EDD64E1282E84D000CD0B65 /* DateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD64E0282E84D000CD0B65 /* DateHelpers.swift */; };
+		7EDD64E5282E923D00CD0B65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD64E4282E923D00CD0B65 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,6 @@
 /* Begin PBXFileReference section */
 		7E0A4D46282E6D4E00201DE3 /* Softgames Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Softgames Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E0A4D49282E6D4E00201DE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7E0A4D4B282E6D4E00201DE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7E0A4D4D282E6D4E00201DE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7E0A4D50282E6D4E00201DE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E0A4D52282E6D5000201DE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		7E0A4D79282E6FDF00201DE3 /* myPage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = myPage.html; sourceTree = "<group>"; };
 		7E0A4D7A282E6FDF00201DE3 /* myScript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = myScript.js; sourceTree = "<group>"; };
 		7EDD64E0282E84D000CD0B65 /* DateHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
+		7EDD64E4282E923D00CD0B65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				7E0A4D49282E6D4E00201DE3 /* AppDelegate.swift */,
-				7E0A4D4B282E6D4E00201DE3 /* SceneDelegate.swift */,
 				7E0A4D4D282E6D4E00201DE3 /* ViewController.swift */,
 				7E0A4D4F282E6D4E00201DE3 /* Main.storyboard */,
 				7EDD64E2282E84D400CD0B65 /* Helpers */,
@@ -147,6 +146,7 @@
 		7EDD64E2282E84D400CD0B65 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7EDD64E4282E923D00CD0B65 /* Constants.swift */,
 				7EDD64E0282E84D000CD0B65 /* DateHelpers.swift */,
 			);
 			path = Helpers;
@@ -293,10 +293,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EDD64E5282E923D00CD0B65 /* Constants.swift in Sources */,
 				7E0A4D4E282E6D4E00201DE3 /* ViewController.swift in Sources */,
 				7EDD64E1282E84D000CD0B65 /* DateHelpers.swift in Sources */,
 				7E0A4D4A282E6D4E00201DE3 /* AppDelegate.swift in Sources */,
-				7E0A4D4C282E6D4E00201DE3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

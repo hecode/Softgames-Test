@@ -17,7 +17,6 @@ class ViewController: UIViewController {
         setup()
     }
     
-    
 }
 
 
@@ -53,7 +52,7 @@ extension ViewController {
 }
 
 
-// MARK: - Swift to JS Actions -
+// MARK: - JS Triggered Actions -
 
 extension ViewController {
     
@@ -64,7 +63,12 @@ extension ViewController {
         webView.evaluateJavaScript("setFullName(\"\(fullName)\");", completionHandler: nil)
     }
     
-    func calculateAndUpdateAge(_ dob: Date) {
+    func calculateAndUpdateAge(_ dob: Date?) {
+        guard let dob = dob else {
+            webView.evaluateJavaScript("setAge(\"error\");", completionHandler: nil)
+            return
+        }
+        
         if let age = yearsBetweenDates(startDate: dob, endDate: Date()) {
             if age >= 0 {
                 webView.evaluateJavaScript("setAge(\"\(age)\");", completionHandler: nil)
@@ -92,10 +96,7 @@ extension ViewController {
         
         center.add(request, withCompletionHandler: { (error) in
             if let error = error {
-                // Something went wrong
                 print("Error : \(error.localizedDescription)")
-            } else {
-                print("Success")
             }
         })
     }
@@ -108,16 +109,11 @@ extension ViewController {
 extension ViewController: WKScriptMessageHandler {
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        //        print("Message received: \(message.name) with body: \(message.body)")
         if message.name == "NamesJSInterface", let dict = message.body as? NSDictionary {
             mergeAndUpdateNames(dict)
         } else if message.name == "DobJSInterface", let dobStr = message.body as? String {
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                if let date = dateFormatter.date(from: dobStr) {
-                    self.calculateAndUpdateAge(date)
-                }
+                self.calculateAndUpdateAge(getDateFromString(dateStr: dobStr))
             }
         } else if message.name == "LocalNotificationJSInterface" {
             triggerLocalNotification()

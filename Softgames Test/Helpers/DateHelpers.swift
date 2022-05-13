@@ -14,3 +14,9 @@ func yearsBetweenDates(startDate: Date, endDate: Date) -> Int? {
 
     return components.year
 }
+
+func getDateFromString(dateStr: String) -> Date? {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = Constants.DateFormats.yearMonthDay
+    return dateFormatter.date(from: dateStr) 
+}
