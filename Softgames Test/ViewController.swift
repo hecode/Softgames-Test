@@ -30,6 +30,8 @@ extension ViewController {
                                                         name: "NamesJSInterface")
         webView.configuration.userContentController.add(self,
                                                         name: "DobJSInterface")
+        webView.configuration.userContentController.add(self,
+                                                        name: "LocalNotificationJSInterface")
         
         do {
             guard let filePath = Bundle.main.path(forResource: "myPage", ofType: "html")
@@ -72,6 +74,32 @@ extension ViewController {
         }
     }
     
+    func triggerLocalNotification() {
+        let center = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Solitaire smash"
+        content.body = "Play again to smash your top score"
+        content.sound = UNNotificationSound.default
+        
+        let identifier = "ibrahim.b.beltagy.Softgames-Test.notificationIdentifier"
+        
+        var triggerDate = DateComponents()
+        triggerDate.second = 7
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        center.add(request, withCompletionHandler: { (error) in
+            if let error = error {
+                // Something went wrong
+                print("Error : \(error.localizedDescription)")
+            } else {
+                print("Success")
+            }
+        })
+    }
+    
 }
 
 
@@ -80,7 +108,7 @@ extension ViewController {
 extension ViewController: WKScriptMessageHandler {
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-//        print("Message received: \(message.name) with body: \(message.body)")
+        //        print("Message received: \(message.name) with body: \(message.body)")
         if message.name == "NamesJSInterface", let dict = message.body as? NSDictionary {
             mergeAndUpdateNames(dict)
         } else if message.name == "DobJSInterface", let dobStr = message.body as? String {
@@ -91,8 +119,9 @@ extension ViewController: WKScriptMessageHandler {
                     self.calculateAndUpdateAge(date)
                 }
             }
+        } else if message.name == "LocalNotificationJSInterface" {
+            triggerLocalNotification()
         }
     }
-    
     
 }

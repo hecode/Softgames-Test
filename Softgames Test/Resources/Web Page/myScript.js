@@ -1,7 +1,3 @@
-window.onerror = function(error) {
-  alert(error); // Fire when errors occur. Just a test.
-};
-
 function syncFunction() {
 
     var names = {
@@ -22,7 +18,6 @@ function syncFunction() {
 
 function asyncFunction() {
     var dob = document.getElementById("dob").value;
-    console.log(dob);
     if (window.webkit && window.webkit.messageHandlers) {
         try {
             webkit.messageHandlers.DobJSInterface.postMessage(dob);
@@ -33,6 +28,20 @@ function asyncFunction() {
         console.log("No interface APIs found.");
     }
 }
+
+function localNotificationFunction() {
+    if (window.webkit && window.webkit.messageHandlers) {
+        try {
+            webkit.messageHandlers.LocalNotificationJSInterface.postMessage("");
+        } catch(err) {
+            console.log(err);
+        }
+    } else {
+        console.log("No interface APIs found.");
+    }
+}
+
+
 
 function setFullName(fullName) {
     document.getElementById("fullName").innerText = fullName;
